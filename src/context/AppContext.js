@@ -5,6 +5,7 @@ export const AppReducer = (state, action) => {
     let new_expenses = [];
     switch (action.type) {
         case 'ADD_QUANTITY':
+            // eslint-disable-next-line no-unused-vars
             let updatedqty = false;
             state.expenses.map((expense)=>{
                 if(expense.name === action.payload.name) {
@@ -83,7 +84,7 @@ export const AppProvider = (props) => {
     const totalExpenses = state.expenses.reduce((total, item) => {
         return (total = total + (item.unitprice*item.quantity));
     }, 0);
-state.CartValue = totalExpenses;
+    state.CartValue = totalExpenses;
 
     return (
         <AppContext.Provider
